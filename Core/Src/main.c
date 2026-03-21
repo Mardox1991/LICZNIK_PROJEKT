@@ -24,6 +24,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+
+#include "_tim3_init.h"
+#include "_gpio_init.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,7 +101,16 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
+
+  //inicjalziacja tim3 z reki na rejestrach
   _tim3_init();
+
+  //inicjalizacja GPIOA
+  _gpio_init();
+
+
+
+
 
   /* USER CODE END 2 */
 

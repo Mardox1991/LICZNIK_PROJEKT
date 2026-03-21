@@ -20,9 +20,14 @@
 	 TIM3->PSC = 63;			// Ustawiamy podział (64 mln / 64 = 1 MHz)  ( pamietaj ze procek dodal sobie 63+1 )
 	 TIM3->ARR = 1000;		// Ustawiamy okres (1000 µs = 1 kHz)
 
-	 TIM3->CR1 |= TIM_CR1_ARPE; // Włączamy buforowanie (płynność)
+	 TIM3->CR1 |= TIM_CR1_ARPE;		//Włączamy buforowanie (płynność)
+
+	 // --- CZĘŚĆ 3: ZATWIERDZENIE (Opcjonalnie, ale profesjonalnie) ---
+	 TIM3->EGR |= TIM_EGR_UG;//- przepisz PSC do mechanizmu teraz!
 
 
+	 // --- CZĘŚĆ 4: START! ---
+	 TIM3->CR1 |= TIM_CR1_CEN;	// Maszyna rusza!
 
 
 }
