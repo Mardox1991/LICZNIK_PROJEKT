@@ -1,0 +1,21 @@
+# Build artifacts
+Debug/
+Release/
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.su
+*.d
+
+# Toolchain / IDE files (STM32CubeIDE/Eclipse)
+.settings/
+.metadata/
+.analytics
+.log
+RemoteSystemsTempFiles/
+
+# Pliki generowane przez system operacyjny
+Thumbs.db
+.DS_Store
