@@ -13,7 +13,7 @@
 	 // --- CZĘŚĆ 1: OTWARCIE clocka  ---
 
 	 RCC->APBENR1 |= RCC_APBENR1_TIM3EN;		//(Włączamy zegar)
-	 (void)RCC->APBENR1;						// Czekamy,  AZ prad zegara dotrze do TIM3 -
+	 (void)RCC->APBENR1;						// Czekamy,  AZ prad zegara dotrze do TIM3 -naturalny delay
 
 
 	 // --- CZĘŚĆ 2: USTAWIANIE MASZYNY (Seria poleceń) ---
