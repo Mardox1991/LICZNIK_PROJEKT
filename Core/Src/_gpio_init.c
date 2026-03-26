@@ -17,20 +17,18 @@ void _gpio_init (void){
 
 
 	//--Alternate function mode configuration .
-	//ustawienie pinu PA6 w trybie alternatywnym
+	//ustawienie pinu PA6 w trybie alternatywnym  ( ustawiamy brame )
 	//bedziemy sterowac PWM za pomoca tim3
-
 	GPIOA->MODER &= ( ~(3U<<12) ); //najpierw czyscimy pole rejestru  ktore bedziemy nadpisywac
-
-	GPIOA->MODER |=	   (1U<<13) ;     // 1
-	GPIOA->MODER &= ( ~(1U<<12) );	  // 0
+	GPIOA->MODER |=	   (2U<<12) ;     // 10
 
 
 
-	 GPIOA->AFR[0] &= ~(0xFU << 24); // Czyścimy pole AFSEL6 (4 bity)
+
+	GPIOA->AFR[0] &= ( ~(0xFU << 24) ); // Czyścimy pole AFSEL6 (4 bity)
 
     // Mapujemy fizyczne połączenie (krosowanie) pinu PA6 z wyjściem sprzętowym TIM3_CH1 poprzez wybór funkcji AF1.
-    GPIOA->AFR[0] |=  (1U << 24);  // Wpisujemy 1 (AF1)
+    GPIOA->AFR[0] |=  (1U<<24);  // Wpisujemy 1 (AF1).
 
 
 
