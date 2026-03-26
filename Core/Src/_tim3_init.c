@@ -19,7 +19,7 @@
 
 	 // --- CZĘŚĆ 2: USTAWIANIE MASZYNY (Seria poleceń) ---
 	 TIM3->PSC = 63;			// Ustawiamy podział (64 mln / 64 = 1 MHz)  ( pamietaj ze procek dodal sobie 63+1 )
-	 TIM3->ARR = 1000;		// Ustawiamy okres (1000 µs = 1 kHz)
+	 TIM3->ARR = 1 ;		// Ustawiamy okres (1000 µs = 1 kHz)
 
 	 TIM3->CR1 |= TIM_CR1_ARPE;		//Włączamy buforowanie (płynność)
 
@@ -43,17 +43,6 @@
 
 	 TIM3->CCER |= (1U << 0);
 	 TIM3->CCR1 = 500U;
-
-
-
-
-
-
-
-
-
-
-
 
 
 	 // --- CZĘŚĆ 4: START! ---
